@@ -36,7 +36,7 @@ try:
     with open(str(scriptlocation) + '/pokemon_identifiers.json') as fp:
         pokemon_identifier = json.load(fp)
 except FileNotFoundError:
-    print("Missing identifiers file. Its normal if you are running the script for the first time.")
+    print("Missing identifiers file. This is normal if you are running the script for the first time.")
     print("Press Enter to generate (this action will take around 50 seconds)")
 
     try:
