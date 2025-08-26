@@ -17,8 +17,9 @@ pip install colorama
 ```
 
 # How to run
+Start the Terminal or Command Line in the folder where the script is located and run:
 ```
-python pokeweaknesscli.py 
+python poke-weakness-cli.py 
 ```
 
 # Known Issues
