@@ -4,7 +4,7 @@ import urllib.request
 import json
 import colorama
 from pathlib import Path
-import identifiers
+import poke_identifiers
 
 # Needed for ANSI Escape codes to work on Windows Command Line
 colorama.just_fix_windows_console()
@@ -49,7 +49,7 @@ except FileNotFoundError:
         print("\nExiting...")
         exit(0)
 
-    identifiers.generate()
+    poke_identifiers.generate()
     with open(scriptlocation  / 'pokemon_identifiers.json', encoding="utf-8") as fp:
         pokemon_identifier = json.load(fp)
 

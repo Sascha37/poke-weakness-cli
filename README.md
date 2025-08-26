@@ -23,12 +23,11 @@ python poke-weakness-cli.py
 ```
 
 # Known Issues
-When running on Windows:
-- identifiers scirpt fails to generate json file (fixed, needs testing)
-- cant open files because Windows file paths uses '\' instead of '/' (fixed, needs testing)
-- ANSI escape color codes dont work when ran in Windows CMD (should be fixed, needs testing)
+When running on Windows (should be fixed, needs testing):
+- identifiers scirpt fails to generate json file
+- cant open files because Windows file paths uses '\' instead of '/' 
+- ANSI escape color codes dont work when ran in Windows CMD
 
 # Credits
 - PokeAPI https://pokeapi.co
 - Pokemon identifiers script https://github.com/acxz/pokeshell/blob/master/scripts/create_pokemon_identifiers.py
-
