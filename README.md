@@ -5,9 +5,15 @@ A python script that returns a nice visual respresentation of type weaknesses of
 
 ![Screenshot 1](/screenshots/ss1.png)
 # Requirements
+## Arch Linux
+```
+sudo pacman -S python python-colorama python-requests
+```
+## Windows
 You need to have Python installed and the following libraries: 
 ```
 pip install requests
+pip install colorama
 ```
 
 # How to run
@@ -19,7 +25,7 @@ python pokeweaknesscli.py
 When running on Windows:
 - identifiers scirpt fails to generate json file
 - cant open files because Windows file paths uses '\' instead of '/'
-- ANSI escape color codes dont work when ran in Windows CMD
+- ANSI escape color codes dont work when ran in Windows CMD (should be fixed, needs testing)
 
 # Credits
 - PokeAPI https://pokeapi.co

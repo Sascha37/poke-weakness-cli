@@ -2,8 +2,12 @@
 
 import urllib.request
 import json
+import colorama
 from pathlib import Path
 import identifiers
+
+# Needed for ANSI Escape codes to work on Windows Command Line
+colorama.just_fix_windows_console()
 
 scriptlocation = Path(__file__).parent
 
