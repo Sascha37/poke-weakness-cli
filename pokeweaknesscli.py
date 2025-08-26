@@ -37,11 +37,11 @@ class colors:
     BLACK = '\x1b[38;5;241m'
 
 try:
-    with open(str(scriptlocation) + '/pokemon_identifiers.json') as fp:
+    with open(scriptlocation  / 'pokemon_identifiers.json', encoding="utf-8") as fp:
         pokemon_identifier = json.load(fp)
 except FileNotFoundError:
     print("Missing identifiers file. This is normal if you are running the script for the first time.")
-    print("Press Enter to generate (this action will take around 50 seconds)")
+    print("Press Enter to generate (this action will take around 1-2 Minutes)")
 
     try:
         input()
@@ -50,7 +50,7 @@ except FileNotFoundError:
         exit(0)
 
     identifiers.generate()
-    with open(str(scriptlocation) + '/pokemon_identifiers.json') as fp:
+    with open(scriptlocation  / 'pokemon_identifiers.json', encoding="utf-8") as fp:
         pokemon_identifier = json.load(fp)
 
 def colorizeType(type):

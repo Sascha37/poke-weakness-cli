@@ -23,8 +23,8 @@ python pokeweaknesscli.py
 
 # Known Issues
 When running on Windows:
-- identifiers scirpt fails to generate json file
-- cant open files because Windows file paths uses '\' instead of '/'
+- identifiers scirpt fails to generate json file (fixed, needs testing)
+- cant open files because Windows file paths uses '\' instead of '/' (fixed, needs testing)
 - ANSI escape color codes dont work when ran in Windows CMD (should be fixed, needs testing)
 
 # Credits

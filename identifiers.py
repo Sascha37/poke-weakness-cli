@@ -60,6 +60,5 @@ def generate():
     pokemon_identifiers |= {"シキジカ-あき": "deerling-autumn"}
 
     print("Obtained pokemon identifiers.")
-
-    with open(str(scriptlocation) + "/pokemon_identifiers.json", "w") as json_file:
+    with open(scriptlocation  / 'pokemon_identifiers.json', "w", encoding="utf-8") as json_file:
         json.dump(pokemon_identifiers, json_file, ensure_ascii = False, indent = 2)
