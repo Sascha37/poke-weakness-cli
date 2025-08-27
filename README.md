@@ -2,6 +2,7 @@
 
 # About
 A python script that returns a nice visual respresentation of type weaknesses of a chosen Pokemon.
+You can search Pokemon by their English name, NatDex ID number, or by their names in different languages.
 
 ![Screenshot 1](/screenshots/ss1.png)
 # Requirements
@@ -22,11 +23,8 @@ Start the Terminal or Command Line in the folder where the script is located and
 python poke-weakness-cli.py 
 ```
 
-# Known Issues
-When running on Windows (should be fixed, needs testing):
-- identifiers scirpt fails to generate json file
-- cant open files because Windows file paths uses '\' instead of '/' 
-- ANSI escape color codes dont work when ran in Windows CMD
+# TODO
+- [ ] fuzzy matching to allow for typos while searching Pokemon
 
 # Credits
 - PokeAPI https://pokeapi.co
