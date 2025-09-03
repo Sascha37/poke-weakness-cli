@@ -25,6 +25,8 @@ python poke-weakness-cli.py
 
 # TODO
 - [ ] fuzzy matching to allow for typos while searching Pokemon
+- [ ] more accurate color respresentation of the types
+- [ ] support for pokemon forms like: regional forms, arceus, shaymin, ...
 
 # Credits
 - PokeAPI https://pokeapi.co
