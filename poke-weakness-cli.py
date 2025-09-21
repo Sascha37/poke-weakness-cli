@@ -16,25 +16,25 @@ class colors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
 
-    RED = '\x1b[38;5;9m'
-    GREEN = '\x1b[38;5;10m'
-    YELLOW = '\x1b[38;5;11m'
-    DARKWHITE = '\x1b[38;5;15m'
-    GRAY = '\x1b[38;5;7m'
-    ROCKGRAY = '\x1b[38;5;249m'
-    STEELGRAY = '\x1b[38;5;255m'
-    FAIRYPINK = '\x1b[38;5;13m'
-    PSYCHICPINK = '\x1b[38;5;212m'
-    PURPLE = '\x1b[38;5;98m'
-    GHOSTPURPLE = '\x1b[38;5;141m'
-    DARKGREEN = '\x1b[38;5;107m'
-    BLUE = '\x1b[38;5;45m'
-    ICEBLUE = '\x1b[38;5;14m'
-    DRAGONBLUE = '\x1b[38;5;69m'
-    FLYINGBLUE = '\x1b[38;5;153m'
-    ORANGE = '\x1b[38;5;214m'
-    BROWN = '\x1b[38;5;178m'
-    BLACK = '\x1b[38;5;241m'
+# Reference: https://bulbapedia.bulbagarden.net/wiki/Help:Color_templates
+    BUG = '\x1b[38;2;145;161;25m'
+    DARK = '\x1b[38;2;153;139;140m' # Using the light version of the color for readability
+    DRAGON = '\x1b[38;2;80;96;225m'
+    ELECTRIC = '\x1b[38;2;250;192;0m'
+    FAIRY = '\x1b[38;2;239;112;239m'
+    FIGHTING = '\x1b[38;2;255;128;0m'
+    FIRE = '\x1b[38;2;230;40;41m'
+    FLYING = '\x1b[38;2;129;185;239m'
+    GHOST = '\x1b[38;2;112;65;112m'
+    GRASS = '\x1b[38;2;63;161;41m'
+    GROUND = '\x1b[38;2;145;81;33m'
+    ICE = '\x1b[38;2;61;206;243m'
+    NORMAL = '\x1b[38;2;159;161;159m'
+    POISON = '\x1b[38;2;145;65;203m'
+    PSYCHIC = '\x1b[38;2;239;65;121m'
+    ROCK = '\x1b[38;2;175;169;129m'
+    STEEL = '\x1b[38;2;96;161;184m'
+    WATER = '\x1b[38;2;41;128;239m'
 
 try:
     with open(scriptlocation  / 'pokemon_identifiers.json', encoding="utf-8") as fp:
@@ -54,45 +54,28 @@ except FileNotFoundError:
         pokemon_identifier = json.load(fp)
 
 def colorizeType(type):
-    match type:
-        case "normal":
-            return colors.BOLD + colors.GRAY + type.upper() + colors.ENDC
-        case "fire":
-            return colors.BOLD + colors.RED + type.upper() + colors.ENDC
-        case "water":
-            return colors.BOLD + colors.BLUE + type.upper() + colors.ENDC
-        case "electric":
-            return colors.BOLD + colors.YELLOW + type.upper() + colors.ENDC
-        case "grass":
-            return colors.BOLD + colors.GREEN + type.upper() + colors.ENDC
-        case "ice":
-            return colors.BOLD + colors.ICEBLUE + type.upper() + colors.ENDC
-        case "fighting":
-            return colors.BOLD + colors.ORANGE + type.upper() + colors.ENDC
-        case "poison":
-            return  colors.BOLD + colors.PURPLE + type.upper() + colors.ENDC
-        case "ground":
-            return colors.BOLD + colors.BROWN + type.upper() + colors.ENDC
-        case "flying":
-            return colors.BOLD + colors.FLYINGBLUE + type.upper() + colors.ENDC
-        case "psychic":
-            return colors.BOLD + colors.PSYCHICPINK + type.upper() + colors.ENDC
-        case "bug":
-            return  colors.BOLD + colors.DARKGREEN + type.upper() + colors.ENDC
-        case "rock":
-            return colors.BOLD + colors.ROCKGRAY + type.upper() + colors.ENDC
-        case "ghost":
-            return colors.BOLD + colors.GHOSTPURPLE + type.upper() + colors.ENDC
-        case "dragon":
-            return colors.BOLD + colors.DRAGONBLUE + type.upper() + colors.ENDC
-        case "dark":
-            return colors.BOLD + colors.BLACK + type.upper() + colors.ENDC
-        case "steel":
-            return colors.BOLD + colors.STEELGRAY + type.upper() + colors.ENDC
-        case "fairy":
-            return colors.BOLD + colors.FAIRYPINK + type.upper() + colors.ENDC
-        case _:
-            return colors.BOLD + type.upper() + colors.ENDC
+    type_colors = {
+        "bug": colors.BUG,
+        "dark": colors.DARK,
+        "dragon": colors.DRAGON,
+        "electric": colors.ELECTRIC,
+        "fairy": colors.FAIRY,
+        "fighting": colors.FIGHTING,
+        "fire": colors.FIRE,
+        "flying": colors.FLYING,
+        "ghost": colors.GHOST,
+        "grass": colors.GRASS,
+        "ground": colors.GROUND,
+        "ice": colors.ICE,
+        "normal": colors.NORMAL,
+        "poison": colors.POISON,
+        "psychic": colors.PSYCHIC,
+        "rock": colors.ROCK,
+        "steel": colors.STEEL,
+        "water": colors.WATER
+        }
+    return colors.BOLD + type_colors.get(type, "") + type.upper() + colors.ENDC
+
 
 while(True):
     print("Ctrl + C to exit.")
@@ -151,7 +134,7 @@ while(True):
 
 
     # Fancy Output
-    print("------------------------------------")
+    print("━"*40)
     print(colors.NAME + colors.BOLD + english_name.capitalize() + colors.ENDC, end = " - ")
     for t in types:
         print(colorizeType(t),end=" ")
@@ -184,4 +167,4 @@ while(True):
             print(colorizeType(key), end = " ")
     else: print("None",end = "")
     print(end="\n")
-    print("------------------------------------")
+    print("━"*40)
